@@ -1,0 +1,15 @@
+<div class="container mt-3">
+  <div class="row" *ngIf="characters!=null; else espera">
+    <div class="col" *ngFor="let character of characters.results">
+      <div class="card mb-2" style="width: 15rem;">
+        <img src="{{character.image}}" class="card-img-top" alt="character">
+        <div class="card-body">
+          <p class="card-text">{{character.name}}</p>
+          <a routerLink="/characters" class="btn btn-warning btn-sm pe-5 ps-5">See more</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <ng-template #espera>Esperando datos</ng-template>
+</div>
